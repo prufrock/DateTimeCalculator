@@ -21,17 +21,27 @@ struct ContentView: View {
     @State private var totalTime: String = ""
     @State private var seconds: String = ""
     @State private var textTime: String = ""
+    @State private var trivium: String = ""
     
     var body: some View {
         VStack {
             Group {
-                Text("Time Stamp Calculator of the Century!")
+                VStack {
+                    Text(trivium)
                     .padding()
-                HStack{
+                    .onAppear {
+                        if trivium.isEmpty {
+                            updateTrivium()
+                        }
+                    }
+                    Text("😸")
+                }
+                HStack {
                     TextField("Start", text: $start)
                     TextField("End", text: $end)
                 }
                 Button("🧮") {
+                    updateTrivium()
                     guard start.count > 0 && end.count > 0 else {
                         return
                     }
@@ -79,6 +89,7 @@ struct ContentView: View {
                     TextField("Seconds", text: $seconds)
                 }
                 Button("🧮") {
+                    updateTrivium()
                     guard seconds.count > 0 else {
                         return
                     }
@@ -92,6 +103,27 @@ struct ContentView: View {
                     TextField("Total Time:", text: $textTime)
                 }
             }
+        }
+    }
+    
+    private func updateTrivium() {
+        guard let url = Bundle.main.url(forResource: "trivia", withExtension: ".json") else {
+            print("couldn't find file😝.")
+            trivium = "😵"
+            return
+        }
+               
+        do {
+            let data = try Data(contentsOf: url)
+            let decoder = JSONDecoder()
+            let contents = try decoder.decode(Trivia.self, from: data)
+            
+            let length = contents.trivium.count
+            trivium = contents.trivium[Int.random(in: 0..<length)]
+        } catch {
+            print("Couldn't read the file🚫📚. \(error)")
+            trivium = "😵"
+            return
         }
     }
 }
@@ -131,4 +163,8 @@ extension Double {
         let adjusted = self * pow(10.0, Double(precision))
         return (adjusted.rounded() / pow(10.0, Double(precision)))
     }
+}
+
+struct Trivia: Decodable {
+    let trivium: [String]
 }

@@ -15,6 +15,8 @@
 		4047E33E2629FDD6000488DD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4047E3132629FDD5000488DD /* ContentView.swift */; };
 		4047E33F2629FDD6000488DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4047E3142629FDD6000488DD /* Assets.xcassets */; };
 		4047E3402629FDD6000488DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4047E3142629FDD6000488DD /* Assets.xcassets */; };
+		408ECBC2262DCD1600F7434D /* trivia.json in Resources */ = {isa = PBXBuildFile; fileRef = 408ECBC1262DCD1600F7434D /* trivia.json */; };
+		408ECBC3262DCD1600F7434D /* trivia.json in Resources */ = {isa = PBXBuildFile; fileRef = 408ECBC1262DCD1600F7434D /* trivia.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,7 @@
 		4047E3342629FDD6000488DD /* Tests macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4047E3382629FDD6000488DD /* Tests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOS.swift; sourceTree = "<group>"; };
 		4047E33A2629FDD6000488DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		408ECBC1262DCD1600F7434D /* trivia.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = trivia.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +104,7 @@
 				4047E3122629FDD5000488DD /* DateTimeCalculatorApp.swift */,
 				4047E3132629FDD5000488DD /* ContentView.swift */,
 				4047E3142629FDD6000488DD /* Assets.xcassets */,
+				408ECBC1262DCD1600F7434D /* trivia.json */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -275,6 +279,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				408ECBC2262DCD1600F7434D /* trivia.json in Resources */,
 				4047E33F2629FDD6000488DD /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -283,6 +288,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				408ECBC3262DCD1600F7434D /* trivia.json in Resources */,
 				4047E3402629FDD6000488DD /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
